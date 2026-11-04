@@ -4,30 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
-  <meta name="description" content="REDARMY: contenido, videojuegos y proyectos.">
+  <meta name="description" content="REDARMY: contenido, videojuegos y proyectos. Cuarteto de Nos, Among Us y Brawl Stars.">
   <title>REDARMY | Página oficial</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #101010;
-      --panel: #191919;
-      --text: #f5f5f5;
-      --muted: #a0a0a0;
-      --red: #e63939;
-      --line: #303030;
+      --bg: #0c0c0e;
+      --panel: #17171b;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --red: #e63946;
+      --line: #303036;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
-
     a { color: inherit; }
 
     .topbar {
@@ -36,9 +33,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #292929;
+      border-bottom: 1px solid #29292e;
+      background: rgba(12,12,14,.94);
     }
-
     .brand {
       color: var(--red);
       font-size: 23px;
@@ -46,26 +43,25 @@
       letter-spacing: 4px;
       text-decoration: none;
     }
-
     .topbar nav a {
       color: var(--muted);
       font-size: 14px;
       margin-left: 22px;
       text-decoration: none;
     }
-
-    .topbar nav a:hover { color: var(--text); }
+    .topbar nav a:hover { color: white; }
 
     .hero {
-      min-height: 410px;
-      padding: 90px 20px;
+      min-height: 440px;
+      padding: 100px 20px;
       display: grid;
       place-content: center;
       text-align: center;
       background:
-        radial-gradient(ellipse at center, rgba(230,57,57,.10), transparent 58%);
+        radial-gradient(ellipse at 50% 45%, rgba(230,57,70,.16), transparent 55%),
+        linear-gradient(180deg, #101014 0%, var(--bg) 100%);
+      border-bottom: 1px solid #242429;
     }
-
     .eyebrow {
       color: var(--red);
       font-size: 12px;
@@ -73,32 +69,117 @@
       letter-spacing: 5px;
       margin-bottom: 12px;
     }
-
     h1 {
-      font-size: clamp(48px, 10vw, 88px);
+      font-size: clamp(48px, 10vw, 92px);
       letter-spacing: clamp(4px, 1vw, 10px);
       line-height: 1.1;
+      font-weight: 900;
     }
-
     h1 span { color: var(--red); }
-
     .hero p {
-      color: var(--muted);
+      color: #b0b0b8;
       font-size: 17px;
       margin-top: 18px;
     }
-
-    .section {
-      width: min(100% - 40px, 1000px);
-      margin: 0 auto;
-      padding: 48px 0;
+    .hero-mark {
+      width: 54px;
+      height: 3px;
+      margin: 28px auto 0;
+      background: var(--red);
+      border-radius: 5px;
     }
 
+    .section {
+      width: min(100% - 40px, 1050px);
+      margin: 0 auto;
+      padding: 65px 0;
+    }
+    .section-heading { margin-bottom: 26px; }
+    .section-heading .eyebrow { margin-bottom: 7px; }
     .section h2 {
+      font-size: clamp(23px, 4vw, 30px);
       border-left: 4px solid var(--red);
-      font-size: 24px;
-      margin-bottom: 22px;
       padding-left: 13px;
+    }
+    .section-intro {
+      color: var(--muted);
+      margin-top: 10px;
+      max-width: 650px;
+    }
+
+    .world-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .world-card {
+      position: relative;
+      min-height: 270px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      border: 1px solid #35353b;
+      border-radius: 11px;
+      background: #19191e;
+      isolation: isolate;
+      transition: transform .22s ease, border-color .22s ease;
+    }
+    .world-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--red);
+    }
+    .world-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .9;
+    }
+    .world-card.cuarteto::before {
+      background:
+        repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.035) 23px 24px),
+        radial-gradient(ellipse at 80% 15%, rgba(174,35,48,.42), transparent 55%),
+        linear-gradient(145deg, #292027, #121216 75%);
+    }
+    .world-card.among::before {
+      background:
+        radial-gradient(circle at 75% 22%, rgba(218,70,70,.35) 0 5%, transparent 5.5%),
+        radial-gradient(ellipse at 80% 10%, rgba(120,30,40,.4), transparent 50%),
+        linear-gradient(145deg, #24232a, #111116 75%);
+    }
+    .world-card.brawl::before {
+      background:
+        radial-gradient(circle at 85% 18%, rgba(231,151,45,.28), transparent 38%),
+        repeating-linear-gradient(45deg, transparent 0 28px, rgba(255,255,255,.025) 29px 30px),
+        linear-gradient(145deg, #29251d, #121216 75%);
+    }
+    .card-number {
+      position: absolute;
+      top: 18px;
+      right: 21px;
+      color: rgba(255,255,255,.22);
+      font-size: 42px;
+      font-weight: 900;
+    }
+    .card-tag {
+      color: #ff858b;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .world-card h3 {
+      font-size: 25px;
+      line-height: 1.2;
+      margin-bottom: 9px;
+    }
+    .world-card p {
+      color: #b6b6bd;
+      font-size: 14px;
+      max-width: 270px;
     }
 
     .socials {
@@ -106,7 +187,6 @@
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 14px;
     }
-
     .social-card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -115,17 +195,11 @@
       text-decoration: none;
       transition: border-color .2s, transform .2s;
     }
-
     .social-card:hover {
       border-color: var(--red);
       transform: translateY(-3px);
     }
-
-    .social-card strong {
-      display: block;
-      font-size: 18px;
-    }
-
+    .social-card strong { display: block; font-size: 18px; }
     .social-card span {
       color: var(--muted);
       font-size: 13px;
@@ -140,26 +214,29 @@
       text-align: center;
       color: var(--muted);
     }
-
     .video-placeholder a {
-      color: var(--red);
+      color: #ff666f;
       display: inline-block;
       margin-top: 10px;
       text-decoration: none;
     }
-
     footer {
-      border-top: 1px solid #292929;
-      color: #707070;
+      border-top: 1px solid #29292e;
+      color: #707078;
       font-size: 13px;
       padding: 25px 15px;
       text-align: center;
     }
 
+    @media (max-width: 760px) {
+      .world-grid { grid-template-columns: 1fr; }
+      .world-card { min-height: 220px; }
+    }
     @media (max-width: 560px) {
       .topbar { align-items: flex-start; flex-direction: column; gap: 10px; }
       .topbar nav a { margin: 0 16px 0 0; }
-      .hero { min-height: 330px; }
+      .hero { min-height: 350px; }
+      .section { padding: 48px 0; }
     }
   </style>
 </head>
@@ -167,6 +244,7 @@
   <header class="topbar">
     <a class="brand" href="#" aria-label="REDARMY, inicio">REDARMY</a>
     <nav aria-label="Navegación principal">
+      <a href="#universo">Temas</a>
       <a href="#redes">Redes</a>
       <a href="#videos">Videos</a>
     </nav>
@@ -177,10 +255,45 @@
       <div class="eyebrow">PÁGINA OFICIAL</div>
       <h1>RED<span>ARMY</span></h1>
       <p>Contenido, videojuegos y proyectos.</p>
+      <div class="hero-mark"></div>
+    </section>
+
+    <section class="section" id="universo">
+      <div class="section-heading">
+        <div class="eyebrow">LO QUE ENCONTRÁS ACÁ</div>
+        <h2>El universo REDARMY</h2>
+        <p class="section-intro">Tres mundos, distintos estilos y una misma comunidad. Estos son algunos de los temas que forman parte del canal.</p>
+      </div>
+
+      <div class="world-grid">
+        <article class="world-card cuarteto">
+          <span class="card-number">01</span>
+          <div class="card-tag">Música · Edits</div>
+          <h3>Cuarteto de Nos</h3>
+          <p>Partes reflexivas, momentos intensos y edits con personalidad.</p>
+        </article>
+
+        <article class="world-card among">
+          <span class="card-number">02</span>
+          <div class="card-tag">Gaming · Diversión</div>
+          <h3>Among Us</h3>
+          <p>Partidas, momentos inesperados y situaciones para recordar.</p>
+        </article>
+
+        <article class="world-card brawl">
+          <span class="card-number">03</span>
+          <div class="card-tag">Gaming · Acción</div>
+          <h3>Brawl Stars</h3>
+          <p>Partidas, jugadas y contenido del universo Brawl.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="redes">
-      <h2>Encontrame en</h2>
+      <div class="section-heading">
+        <div class="eyebrow">SEGUÍ EL PROYECTO</div>
+        <h2>Encontrame en</h2>
+      </div>
       <div class="socials">
         <a class="social-card" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">
           <strong>YouTube</strong>
@@ -198,9 +311,12 @@
     </section>
 
     <section class="section" id="videos">
-      <h2>Últimos videos</h2>
+      <div class="section-heading">
+        <div class="eyebrow">NOVEDADES</div>
+        <h2>Últimos videos</h2>
+      </div>
       <div class="video-placeholder">
-        <p>Muy pronto vas a encontrar acá los últimos videos de REDARMY.</p>
+        <p>Próximamente vas a encontrar acá los últimos videos de REDARMY.</p>
         <a href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">
           Ver el canal de YouTube
         </a>
