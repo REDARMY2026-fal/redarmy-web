@@ -323,6 +323,31 @@
       .hero { min-height: 350px; }
       .section { padding: 48px 0; }
     }
+
+    .tab-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tab-button {
+      appearance: none;
+      border: 1px solid #34343b;
+      border-radius: 999px;
+      background: #17171b;
+      color: var(--muted);
+      padding: 9px 15px;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .tab-button:hover { color: white; border-color: rgba(230,57,70,.6); }
+    .tab-button.active {
+      color: white;
+      background: rgba(230,57,70,.16);
+      border-color: var(--red);
+      box-shadow: 0 0 18px rgba(230,57,70,.10);
+    }
+    .tab-panel[hidden] { display: none !important; }
+    .tab-panel { min-height: 62vh; animation: tabFade .22s ease; }
+    @keyframes tabFade { from { opacity: .45; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
   </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS7WJNEC0W"></script>
@@ -336,15 +361,17 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#" aria-label="REDARMY, inicio">REDARMY</a>
-    <nav aria-label="Navegación principal">
-      <a href="#universo">Contenido</a>
-      <a href="#directos">Directos</a>
-      <a href="#redes">Redes y perfiles</a>
-      <a href="#videos">Videos</a>
+    <nav class="tab-nav" aria-label="Secciones principales" role="tablist">
+      <button class="tab-button active" type="button" role="tab" aria-selected="true" data-tab="inicio">Inicio</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="contenido">Contenido</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="directos">Directos</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="redes">Redes y perfiles</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="videos">Videos</button>
     </nav>
   </header>
 
   <main>
+    <section class="tab-panel active" id="tab-inicio" role="tabpanel" data-panel="inicio">
     <section class="hero">
       <div class="eyebrow">PÁGINA OFICIAL</div>
       <h1>RED<span>ARMY</span></h1>
@@ -352,6 +379,9 @@
       <div class="hero-mark"></div>
     </section>
 
+    </section>
+
+    <section class="tab-panel" id="tab-contenido" role="tabpanel" data-panel="contenido" hidden>
     <section class="section" id="universo">
       <div class="section-heading">
         <div class="eyebrow">LO QUE ENCONTRÁS ACÁ</div>
@@ -387,6 +417,9 @@
       </div>
     </section>
 
+    </section>
+
+    <section class="tab-panel" id="tab-directos" role="tabpanel" data-panel="directos" hidden>
     <section class="section" id="directos">
       <div class="section-heading">
         <div class="eyebrow">EN VIVO · YOUTUBE</div>
@@ -425,6 +458,9 @@
       </div>
     </section>
 
+    </section>
+
+    <section class="tab-panel" id="tab-redes" role="tabpanel" data-panel="redes" hidden>
     <section class="section" id="redes">
       <div class="section-heading">
         <div class="eyebrow">SEGUÍ EL PROYECTO</div>
@@ -450,6 +486,9 @@
       </div>
     </section>
 
+    </section>
+
+    <section class="tab-panel" id="tab-videos" role="tabpanel" data-panel="videos" hidden>
     <section class="section" id="videos">
       <div class="section-heading">
         <div class="eyebrow">NOVEDADES</div>
@@ -462,8 +501,35 @@
         </a>
       </div>
     </section>
+    </section>
   </main>
 
   <footer>© 2026 REDARMY · Todos los derechos reservados.</footer>
+
+  <script>
+    (() => {
+      const buttons = document.querySelectorAll('.tab-button');
+      const panels = document.querySelectorAll('[data-panel]');
+      function activateTab(name, updateHash = true) {
+        buttons.forEach(button => {
+          const selected = button.dataset.tab === name;
+          button.classList.toggle('active', selected);
+          button.setAttribute('aria-selected', String(selected));
+          button.tabIndex = selected ? 0 : -1;
+        });
+        panels.forEach(panel => {
+          const selected = panel.dataset.panel === name;
+          panel.hidden = !selected;
+          panel.classList.toggle('active', selected);
+        });
+        if (updateHash) history.replaceState(null, '', '#' + name);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      buttons.forEach(button => button.addEventListener('click', () => activateTab(button.dataset.tab)));
+      const initial = location.hash.replace('#', '');
+      activateTab([...buttons].some(button => button.dataset.tab === initial) ? initial : 'inicio', false);
+    })();
+  </script>
+
 </body>
 </html>
