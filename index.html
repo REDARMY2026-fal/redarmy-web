@@ -182,6 +182,77 @@
       max-width: 270px;
     }
 
+    .brawl-goal {
+      margin-top: 18px;
+      padding: 13px 14px;
+      border: 1px solid rgba(230,57,70,.55);
+      border-radius: 8px;
+      background: rgba(230,57,70,.10);
+    }
+    .brawl-goal strong {
+      display: block;
+      color: #ff737c;
+      font-size: 15px;
+      letter-spacing: .5px;
+    }
+    .brawl-goal span {
+      display: block;
+      color: #c7c7ce;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .stream-card {
+      padding: 23px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .stream-card h3 { font-size: 21px; margin-bottom: 7px; }
+    .stream-time {
+      color: #ff737c;
+      font-size: 25px;
+      font-weight: 800;
+      margin: 8px 0;
+    }
+    .stream-card p, .timezone-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .stream-label {
+      display: inline-block;
+      border: 1px solid #80652c;
+      color: #f0c56b;
+      border-radius: 20px;
+      padding: 3px 9px;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+    .timezone-wrap {
+      margin-top: 20px;
+      padding: 20px;
+      background: #121216;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .timezone-wrap h3 { font-size: 17px; margin-bottom: 12px; }
+    .timezone-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .timezone-item {
+      padding: 10px;
+      background: #1b1b20;
+      border-radius: 7px;
+    }
+    .timezone-item strong { display: block; font-size: 13px; }
+    .timezone-item span { color: #ff858b; font-weight: bold; font-size: 14px; }
+    .timezone-note { margin-top: 13px; }
     .socials {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -245,6 +316,7 @@
     <a class="brand" href="#" aria-label="REDARMY, inicio">REDARMY</a>
     <nav aria-label="Navegación principal">
       <a href="#universo">Temas</a>
+      <a href="#directos">Directos</a>
       <a href="#redes">Redes</a>
       <a href="#videos">Videos</a>
     </nav>
@@ -284,8 +356,50 @@
           <span class="card-number">03</span>
           <div class="card-tag">Gaming · Acción</div>
           <h3>Brawl Stars</h3>
-          <p>Partidas, jugadas y contenido del universo Brawl.</p>
+          <p>Partidas, jugadas, directos y contenido del universo Brawl.</p>
+          <div class="brawl-goal">
+            <strong>VOICE REVEAL EN 5 MIL SUBS</strong>
+            <span>Una meta especial de la comunidad REDARMY.</span>
+          </div>
         </article>
+      </div>
+    </section>
+
+    <section class="section" id="directos">
+      <div class="section-heading">
+        <div class="eyebrow">EN VIVO · YOUTUBE</div>
+        <h2>Cronograma de directos</h2>
+        <p class="section-intro">Los horarios son tentativos. Cada directo durará aproximadamente una hora y estará dedicado principalmente a Brawl Stars.</p>
+      </div>
+
+      <div class="schedule-grid">
+        <article class="stream-card">
+          <span class="stream-label">POSIBLE · SUJETO A DISPONIBILIDAD</span>
+          <h3>Jueves</h3>
+          <div class="stream-time">21:00</div>
+          <p>Horario de Argentina · Duración aproximada: 1 hora</p>
+        </article>
+        <article class="stream-card">
+          <span class="stream-label">POSIBLE · SUJETO A DISPONIBILIDAD</span>
+          <h3>Sábados</h3>
+          <div class="stream-time">22:00</div>
+          <p>Horario de Argentina · Duración aproximada: 1 hora</p>
+        </article>
+      </div>
+
+      <div class="timezone-wrap">
+        <h3>Horarios en otros países</h3>
+        <div class="timezone-grid">
+          <div class="timezone-item"><strong>Uruguay</strong><span>Jue 21:00 · Sáb 22:00</span></div>
+          <div class="timezone-item"><strong>Chile (Santiago)</strong><span>Jue 21:00 · Sáb 22:00</span></div>
+          <div class="timezone-item"><strong>Brasil (Brasilia)</strong><span>Jue 21:00 · Sáb 22:00</span></div>
+          <div class="timezone-item"><strong>Paraguay</strong><span>Jue 21:00 · Sáb 22:00</span></div>
+          <div class="timezone-item"><strong>Colombia</strong><span>Jue 19:00 · Sáb 20:00</span></div>
+          <div class="timezone-item"><strong>Perú</strong><span>Jue 19:00 · Sáb 20:00</span></div>
+          <div class="timezone-item"><strong>México (CDMX)</strong><span>Jue 18:00 · Sáb 19:00</span></div>
+          <div class="timezone-item"><strong>España (Madrid)</strong><span>Vie 01:00 · Dom 02:00</span></div>
+        </div>
+        <p class="timezone-note">Los horarios internacionales son orientativos y pueden variar cuando algún país cambia al horario de verano o de invierno. Los directos se anunciarán por YouTube; Twitch todavía no forma parte del cronograma.</p>
       </div>
     </section>
 
