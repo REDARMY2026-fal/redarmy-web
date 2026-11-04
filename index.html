@@ -28,13 +28,18 @@
     a { color: inherit; }
 
     .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
       min-height: 76px;
       padding: 18px max(7%, calc((100% - 1100px) / 2));
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 18px;
       border-bottom: 1px solid #29292e;
       background: rgba(12,12,14,.94);
+      backdrop-filter: blur(14px);
     }
     .brand {
       color: var(--red);
@@ -43,13 +48,21 @@
       letter-spacing: 4px;
       text-decoration: none;
     }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 8px; }
     .topbar nav a {
       color: var(--muted);
-      font-size: 14px;
-      margin-left: 22px;
+      font-size: 13px;
+      padding: 7px 12px;
+      border: 1px solid transparent;
+      border-radius: 999px;
       text-decoration: none;
+      transition: color .2s, background .2s, border-color .2s;
     }
-    .topbar nav a:hover { color: white; }
+    .topbar nav a:hover {
+      color: white;
+      background: rgba(230,57,70,.12);
+      border-color: rgba(230,57,70,.35);
+    }
 
     .hero {
       min-height: 440px;
@@ -58,8 +71,9 @@
       place-content: center;
       text-align: center;
       background:
-        radial-gradient(ellipse at 50% 45%, rgba(230,57,70,.16), transparent 55%),
-        linear-gradient(180deg, #101014 0%, var(--bg) 100%);
+        radial-gradient(ellipse at 50% 35%, rgba(230,57,70,.23), transparent 48%),
+        radial-gradient(ellipse at 15% 85%, rgba(95,35,45,.12), transparent 40%),
+        linear-gradient(180deg, #141116 0%, var(--bg) 100%);
       border-bottom: 1px solid #242429;
     }
     .eyebrow {
@@ -121,7 +135,7 @@
       justify-content: flex-end;
       padding: 25px;
       border: 1px solid #35353b;
-      border-radius: 11px;
+      border-radius: 15px;
       background: #19191e;
       isolation: isolate;
       transition: transform .22s ease, border-color .22s ease;
@@ -259,10 +273,10 @@
       gap: 14px;
     }
     .social-card {
-      background: var(--panel);
+      background: linear-gradient(145deg, #1c1c22, #131317);
       border: 1px solid var(--line);
-      border-radius: 9px;
-      padding: 21px;
+      border-radius: 12px;
+      padding: 23px;
       text-decoration: none;
       transition: border-color .2s, transform .2s;
     }
@@ -323,9 +337,9 @@
   <header class="topbar">
     <a class="brand" href="#" aria-label="REDARMY, inicio">REDARMY</a>
     <nav aria-label="Navegación principal">
-      <a href="#universo">Temas</a>
+      <a href="#universo">Contenido</a>
       <a href="#directos">Directos</a>
-      <a href="#redes">Redes</a>
+      <a href="#redes">Redes y perfiles</a>
       <a href="#videos">Videos</a>
     </nav>
   </header>
@@ -424,6 +438,10 @@
         <a class="social-card" href="https://www.tiktok.com/@focardo_2026" target="_blank" rel="noopener noreferrer">
           <strong>TikTok</strong>
           <span>@focardo_2026</span>
+        </a>
+        <a class="social-card" href="https://diplomacia.com.tr/profile" target="_blank" rel="noopener noreferrer">
+          <strong>Diplomacia · Targen Labs</strong>
+          <span>Mi perfil en el juego</span>
         </a>
         <a class="social-card" href="https://www.twitch.tv/redarmy2024" target="_blank" rel="noopener noreferrer">
           <strong>Twitch</strong>
