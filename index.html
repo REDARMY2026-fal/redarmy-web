@@ -348,6 +348,37 @@
     .tab-panel { min-height: 62vh; animation: tabFade .22s ease; }
     @keyframes tabFade { from { opacity: .45; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
+  
+    .hero-update {
+      display: inline-block;
+      margin: 26px auto 0;
+      padding: 10px 17px;
+      border: 1px solid rgba(230,57,70,.55);
+      border-radius: 999px;
+      background: rgba(230,57,70,.12);
+      color: #ffd5d8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      max-width: min(92vw, 650px);
+    }
+    .world-card::before { background-size: cover !important; background-position: center; opacity: .42 !important; }
+    .world-card.cuarteto::before { background-image: linear-gradient(180deg, rgba(12,12,14,.05), rgba(12,12,14,.8)), url('assets/fondo-cuarteto.svg') !important; }
+    .world-card.among::before { background-image: linear-gradient(180deg, rgba(12,12,14,.05), rgba(12,12,14,.82)), url('assets/fondo-among-us.svg') !important; }
+    .world-card.brawl::before { background-image: linear-gradient(180deg, rgba(12,12,14,.05), rgba(12,12,14,.82)), url('assets/fondo-brawl.svg') !important; }
+    .world-card { background: rgba(20,20,25,.82); backdrop-filter: blur(3px); }
+    .social-card { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(35,25,30,.92), rgba(16,16,20,.96)); }
+    .social-card::after {
+      content: ""; position: absolute; width: 130px; height: 130px; right: -45px; top: -55px;
+      border: 1px solid rgba(230,57,70,.22); border-radius: 50%;
+      box-shadow: 0 0 0 18px rgba(230,57,70,.035), 0 0 0 38px rgba(230,57,70,.025);
+      pointer-events: none;
+    }
+    .social-card strong, .social-card span { position: relative; z-index: 1; }
+    .social-card .joke { display: block; margin-top: 7px; color: #ff858b; font-weight: 700; }
+    .kick-card { border-color: rgba(83,252,24,.28); }
+    .kick-card:hover { border-color: #53fc18; }
+
   </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS7WJNEC0W"></script>
@@ -377,6 +408,7 @@
       <h1>RED<span>ARMY</span></h1>
       <p>Contenido, videojuegos y proyectos.</p>
       <div class="hero-mark"></div>
+      <div class="hero-update">ESTA WEB VA A ESTAR EN ACTUALIZACIONES CADA 2 DÍAS (APROXIMADAMENTE)</div>
     </section>
 
     </section>
@@ -477,11 +509,15 @@
         </a>
         <a class="social-card" href="https://diplomacia.com.tr/profile" target="_blank" rel="noopener noreferrer">
           <strong>Diplomacia · Targen Labs</strong>
-          <span>Mi perfil en el juego</span>
+          <span class="joke">Si son PROS, dónenme porfa</span>
         </a>
         <a class="social-card" href="https://www.twitch.tv/redarmy2024" target="_blank" rel="noopener noreferrer">
           <strong>Twitch</strong>
           <span>redarmy2024</span>
+        </a>
+        <a class="social-card kick-card" href="https://kick.com/" target="_blank" rel="noopener noreferrer">
+          <strong>Kick</strong>
+          <span>Próximamente · perfil por añadir</span>
         </a>
       </div>
     </section>
