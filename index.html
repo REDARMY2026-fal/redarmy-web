@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="REDARMY: contenido, videojuegos y proyectos.">
+  <title>REDARMY | Página oficial</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101010;
+      --panel: #191919;
+      --text: #f5f5f5;
+      --muted: #a0a0a0;
+      --red: #e63939;
+      --line: #303030;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      min-height: 76px;
+      padding: 18px max(7%, calc((100% - 1100px) / 2));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #292929;
+    }
+
+    .brand {
+      color: var(--red);
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-decoration: none;
+    }
+
+    .topbar nav a {
+      color: var(--muted);
+      font-size: 14px;
+      margin-left: 22px;
+      text-decoration: none;
+    }
+
+    .topbar nav a:hover { color: var(--text); }
+
+    .hero {
+      min-height: 410px;
+      padding: 90px 20px;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, rgba(230,57,57,.10), transparent 58%);
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 10vw, 88px);
+      letter-spacing: clamp(4px, 1vw, 10px);
+      line-height: 1.1;
+    }
+
+    h1 span { color: var(--red); }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      margin-top: 18px;
+    }
+
+    .section {
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    .section h2 {
+      border-left: 4px solid var(--red);
+      font-size: 24px;
+      margin-bottom: 22px;
+      padding-left: 13px;
+    }
+
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+
+    .social-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 21px;
+      text-decoration: none;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .social-card:hover {
+      border-color: var(--red);
+      transform: translateY(-3px);
+    }
+
+    .social-card strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .social-card span {
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .video-placeholder {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 34px 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .video-placeholder a {
+      color: var(--red);
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid #292929;
+      color: #707070;
+      font-size: 13px;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      .topbar { align-items: flex-start; flex-direction: column; gap: 10px; }
+      .topbar nav a { margin: 0 16px 0 0; }
+      .hero { min-height: 330px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="REDARMY, inicio">REDARMY</a>
+    <nav aria-label="Navegación principal">
+      <a href="#redes">Redes</a>
+      <a href="#videos">Videos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">PÁGINA OFICIAL</div>
+      <h1>RED<span>ARMY</span></h1>
+      <p>Contenido, videojuegos y proyectos.</p>
+    </section>
+
+    <section class="section" id="redes">
+      <h2>Encontrame en</h2>
+      <div class="socials">
+        <a class="social-card" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">
+          <strong>YouTube</strong>
+          <span>@REDARMYGAMER2027</span>
+        </a>
+        <a class="social-card" href="https://www.tiktok.com/@focardo_2026" target="_blank" rel="noopener noreferrer">
+          <strong>TikTok</strong>
+          <span>@focardo_2026</span>
+        </a>
+        <a class="social-card" href="https://www.twitch.tv/redarmy2024" target="_blank" rel="noopener noreferrer">
+          <strong>Twitch</strong>
+          <span>redarmy2024</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <h2>Últimos videos</h2>
+      <div class="video-placeholder">
+        <p>Muy pronto vas a encontrar acá los últimos videos de REDARMY.</p>
+        <a href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">
+          Ver el canal de YouTube
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 REDARMY · Todos los derechos reservados.</footer>
+</body>
+</html>
