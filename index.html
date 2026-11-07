@@ -324,6 +324,55 @@
       .section { padding: 48px 0; }
     }
 
+
+    .news-grid, .community-grid, .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .info-card, .roadmap-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #1d1b20, #121216);
+    }
+    .info-card .card-tag, .roadmap-card .card-tag { display: block; }
+    .info-card h3, .roadmap-card h3 { margin: 4px 0 8px; font-size: 19px; }
+    .info-card p, .roadmap-card p { color: var(--muted); font-size: 14px; }
+    .info-card a, .community-cta {
+      display: inline-block; margin-top: 13px; color: #ff858b;
+      font-weight: 700; font-size: 13px; text-decoration: none;
+    }
+    .community-banner {
+      padding: 28px; border: 1px solid rgba(230,57,70,.42);
+      border-radius: 14px; background: radial-gradient(ellipse at 90% 10%, rgba(230,57,70,.2), transparent 45%), #171519;
+    }
+    .community-banner h3 { font-size: 23px; margin-bottom: 7px; }
+    .community-banner p { color: #c1c1c8; max-width: 650px; }
+    .community-cta {
+      padding: 10px 16px; border-radius: 999px; border: 1px solid var(--red);
+      background: rgba(230,57,70,.13);
+    }
+    .roadmap-status {
+      display: inline-block; margin-bottom: 8px; color: #ff858b;
+      font-size: 11px; font-weight: 800; letter-spacing: 1.5px;
+    }
+    .featured-video {
+      overflow: hidden; border: 1px solid var(--line); border-radius: 13px;
+      background: #17171b;
+    }
+    .featured-video-frame {
+      aspect-ratio: 16 / 9; display: grid; place-items: center;
+      background: radial-gradient(ellipse at center, rgba(230,57,70,.18), transparent 60%), #101014;
+      color: var(--muted); text-align: center; padding: 24px;
+    }
+    .featured-video-frame strong { display: block; color: white; font-size: 20px; margin-bottom: 7px; }
+    .featured-video-info { padding: 20px; }
+    .featured-video-info p { color: var(--muted); font-size: 14px; }
+    @media (max-width: 560px) {
+      .community-banner { padding: 22px; }
+    }
+
     .tab-nav { display: flex; flex-wrap: wrap; gap: 8px; }
     .tab-button {
       appearance: none;
@@ -409,6 +458,69 @@
       <p>Contenido, videojuegos y proyectos.</p>
       <div class="hero-mark"></div>
       <div class="hero-update">ESTA WEB VA A ESTAR EN ACTUALIZACIONES CADA 2 DÍAS (APROXIMADAMENTE)</div>
+    </section>
+
+    <section class="section" aria-labelledby="novedades-title">
+      <div class="section-heading">
+        <div class="eyebrow">LO ÚLTIMO DEL PROYECTO</div>
+        <h2 id="novedades-title">Novedades REDARMY</h2>
+        <p class="section-intro">Un espacio para enterarte de lo que va cambiando en la página y en el canal.</p>
+      </div>
+      <div class="news-grid">
+        <article class="info-card">
+          <span class="card-tag">WEB · ACTUALIZACIÓN</span>
+          <h3>La página sigue creciendo</h3>
+          <p>Estamos incorporando nuevas secciones para que REDARMY tenga su propio espacio en internet.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-tag">COMUNIDAD</span>
+          <h3>Sumate al Discord</h3>
+          <p>La comunidad también tiene su lugar para reunirse y compartir.</p>
+          <a href="https://discord.gg/QducSKxag" target="_blank" rel="noopener noreferrer">Unirme al Discord →</a>
+        </article>
+        <article class="info-card">
+          <span class="card-tag">YOUTUBE · META</span>
+          <h3>Camino a los 5.000 subs</h3>
+          <p>La meta especial de REDARMY: el Voice Reveal cuando lleguemos a 5 mil suscriptores.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="eyebrow">UNA COMUNIDAD EN CONSTRUCCIÓN</div>
+        <h2>Comunidad REDARMY</h2>
+      </div>
+      <div class="community-banner">
+        <h3>Esto recién empieza.</h3>
+        <p>REDARMY reúne videojuegos, contenido, edits y proyectos. Si querés acompañar el crecimiento del canal y compartir con la comunidad, podés encontrarnos en Discord y en nuestras redes.</p>
+        <a class="community-cta" href="https://discord.gg/QducSKxag" target="_blank" rel="noopener noreferrer">Entrar al Discord ↗</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="eyebrow">OBJETIVOS</div>
+        <h2>Metas del canal</h2>
+        <p class="section-intro">Objetivos que queremos alcanzar junto a la comunidad.</p>
+      </div>
+      <div class="roadmap-grid">
+        <article class="roadmap-card">
+          <span class="roadmap-status">META ESPECIAL</span>
+          <h3>5.000 suscriptores</h3>
+          <p>Voice Reveal de REDARMY. Una meta importante para celebrar con la comunidad.</p>
+        </article>
+        <article class="roadmap-card">
+          <span class="roadmap-status">EN DESARROLLO</span>
+          <h3>Mejorar la web</h3>
+          <p>Agregar novedades, videos destacados y nuevas formas de encontrar el contenido.</p>
+        </article>
+        <article class="roadmap-card">
+          <span class="roadmap-status">PRÓXIMAMENTE</span>
+          <h3>Nuevos proyectos</h3>
+          <p>Seguir explorando ideas, videojuegos y contenido para el universo REDARMY.</p>
+        </article>
+      </div>
     </section>
 
     </section>
@@ -534,11 +646,18 @@
         <div class="eyebrow">NOVEDADES</div>
         <h2>Últimos videos</h2>
       </div>
-      <div class="video-placeholder">
-        <p>Próximamente vas a encontrar acá los últimos videos de REDARMY.</p>
-        <a href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">
-          Ver el canal de YouTube
-        </a>
+      <div class="featured-video">
+        <div class="featured-video-frame" id="featured-video-frame">
+          <div>
+            <strong>Video destacado REDARMY</strong>
+            <p>Este espacio está preparado para mostrar un video de YouTube directamente en la página.</p>
+          </div>
+        </div>
+        <div class="featured-video-info">
+          <h3>Elegí el video que querés destacar</h3>
+          <p>Cuando tengamos el enlace del video, lo colocamos acá para que se pueda reproducir sin salir de la web.</p>
+          <a class="community-cta" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">Visitar el canal de YouTube ↗</a>
+        </div>
       </div>
     </section>
     </section>
