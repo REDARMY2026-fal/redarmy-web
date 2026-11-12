@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
-  <meta name="description" content="REDARMY: contenido, videojuegos y proyectos. Cuarteto de Nos, Among Us y Brawl Stars.">
+  <meta name="description" content="REDARMY: contenido, videojuegos, directos y comunidad. Seguime en YouTube, TikTok, Twitch y Discord. Voice Reveal: meta de 5.000 suscriptores.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="REDARMY">
+  <meta property="og:title" content="REDARMY — Página oficial">
+  <meta property="og:description" content="Videojuegos, contenido, directos y comunidad. Unite al universo REDARMY. Voice Reveal: 5.000 suscriptores.">
+  <meta property="og:url" content="https://redarmy2026-fal.github.io/redarmy-web/">
+  <meta property="og:image" content="https://redarmy2026-fal.github.io/redarmy-web/assets/social-preview.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="REDARMY — Página oficial">
+  <meta name="twitter:description" content="Videojuegos, contenido, directos y comunidad. Voice Reveal: 5.000 suscriptores.">
+  <meta name="twitter:image" content="https://redarmy2026-fal.github.io/redarmy-web/assets/social-preview.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <title>REDARMY | Página oficial</title>
   <style>
     :root {
@@ -428,6 +441,131 @@
     .kick-card { border-color: rgba(83,252,24,.28); }
     .kick-card:hover { border-color: #53fc18; }
 
+
+
+    .voice-banner { padding:34px; }
+    .voice-banner h3 { font-size:clamp(30px,5vw,48px);letter-spacing:2px;color:#fff;text-shadow:0 0 28px rgba(227,38,54,.25); }
+    .voice-target { display:flex;align-items:baseline;gap:12px;margin:20px 0 4px; }
+    .voice-target strong { font-size:clamp(48px,8vw,72px);line-height:1;font-weight:1000;color:#ff4354;letter-spacing:-3px; }
+    .voice-target span { font-size:12px;font-weight:900;letter-spacing:3px;color:#c4c5cd; }
+
+    /* REDARMY visual refresh — November 2026 */
+    :root {
+      --bg: #08090d;
+      --panel: #111319;
+      --panel-2: #171a22;
+      --text: #f7f7fa;
+      --muted: #a5a8b3;
+      --red: #e32636;
+      --red-bright: #ff3447;
+      --line: rgba(255,255,255,.09);
+      --glow: 0 18px 60px rgba(0,0,0,.38);
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 50% -20%, rgba(185,20,38,.17), transparent 42%),
+        linear-gradient(180deg,#090a0e 0%,#0b0d12 48%,#08090d 100%);
+      letter-spacing: .01em;
+    }
+    body::before {
+      content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+      opacity:.16;
+      background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 78%);
+    }
+    .topbar {
+      min-height:78px; padding:14px max(5%,calc((100% - 1160px)/2));
+      background:rgba(8,9,13,.86); border-bottom:1px solid rgba(255,255,255,.08);
+      box-shadow:0 8px 30px rgba(0,0,0,.18);
+    }
+    .brand { font-size:25px; letter-spacing:5px; text-shadow:0 0 24px rgba(227,38,54,.32); }
+    .topbar nav { gap:5px; }
+    .tab-button {
+      border-color:transparent; background:transparent; padding:10px 14px;
+      color:#b9bbc4; font-weight:700; letter-spacing:.02em;
+    }
+    .tab-button.active {
+      background:linear-gradient(135deg,rgba(227,38,54,.22),rgba(227,38,54,.07));
+      border-color:rgba(255,65,81,.55); box-shadow:inset 0 0 18px rgba(227,38,54,.08),0 0 22px rgba(227,38,54,.08);
+    }
+    .hero {
+      min-height:560px; position:relative; overflow:hidden; isolation:isolate;
+      padding:112px 20px 92px;
+      background:
+        linear-gradient(180deg,rgba(8,9,13,.2),rgba(8,9,13,.94)),
+        radial-gradient(ellipse at 50% 38%,rgba(229,35,54,.30),transparent 42%),
+        linear-gradient(135deg,#171018 0%,#101116 52%,#090a0e 100%);
+    }
+    .hero::before,.hero::after {
+      content:"";position:absolute;z-index:-1;pointer-events:none;
+      border:1px solid rgba(255,65,81,.16);transform:rotate(-22deg);
+    }
+    .hero::before { width:420px;height:420px;left:-210px;top:12%;box-shadow:0 0 0 34px rgba(227,38,54,.025),0 0 0 72px rgba(227,38,54,.02); }
+    .hero::after { width:520px;height:520px;right:-280px;bottom:-30%;box-shadow:0 0 0 34px rgba(227,38,54,.025),0 0 0 72px rgba(227,38,54,.02); }
+    .eyebrow { letter-spacing:4px; }
+    h1 { text-shadow:0 12px 55px rgba(0,0,0,.6); }
+    .hero p { font-size:clamp(16px,2vw,20px); }
+    .hero-mark { width:76px;height:4px;box-shadow:0 0 24px rgba(255,52,71,.65); }
+    .hero-actions { display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px; }
+    .hero-action {
+      display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;
+      border:1px solid rgba(255,255,255,.17);border-radius:8px;text-decoration:none;
+      font-weight:800;font-size:13px;letter-spacing:.04em;transition:transform .2s,border-color .2s,background .2s;
+    }
+    .hero-action.primary { background:linear-gradient(135deg,#f02c40,#b81529);border-color:#ff5361;color:white;box-shadow:0 9px 28px rgba(227,38,54,.24); }
+    .hero-action.secondary { background:rgba(255,255,255,.045); }
+    .hero-action:hover { transform:translateY(-3px);border-color:#ff5361; }
+    .hero-update { border-radius:7px;text-transform:uppercase;letter-spacing:1px;background:rgba(227,38,54,.13); }
+    .section { width:min(100% - 42px,1120px);padding:76px 0; }
+    .section-heading { margin-bottom:30px; }
+    .section h2 { font-size:clamp(25px,4vw,34px);border-left-width:4px; }
+    .section-intro { line-height:1.75; }
+    .info-card,.roadmap-card,.stream-card,.timezone-wrap,.social-card,.featured-video,.world-card {
+      border-color:rgba(255,255,255,.10);box-shadow:0 10px 34px rgba(0,0,0,.16);
+    }
+    .info-card,.roadmap-card { background:linear-gradient(145deg,rgba(27,29,38,.96),rgba(14,16,22,.98));transition:transform .2s,border-color .2s; }
+    .info-card:hover,.roadmap-card:hover { transform:translateY(-4px);border-color:rgba(255,65,81,.5); }
+    .community-banner {
+      position:relative;overflow:hidden;
+      background:radial-gradient(ellipse at 92% 10%,rgba(227,38,54,.23),transparent 43%),linear-gradient(125deg,#1a151b,#101219 72%);
+      box-shadow:var(--glow);
+    }
+    .community-banner::after { content:"RA";position:absolute;right:20px;bottom:-55px;font-size:190px;line-height:1;font-weight:1000;color:rgba(255,255,255,.025);pointer-events:none; }
+    .world-card { border-radius:13px;min-height:300px; }
+    .world-card:hover { box-shadow:0 18px 45px rgba(0,0,0,.34),0 0 0 1px rgba(227,38,54,.12); }
+    .social-card { min-height:132px;display:flex;flex-direction:column;justify-content:center;gap:7px; }
+    .social-card strong { font-size:20px; }
+    .social-card span { font-size:13px; }
+    .featured-video { box-shadow:var(--glow); }
+    .stream-card { background:linear-gradient(145deg,#1a1b23,#101117); }
+    .tab-panel { min-height:64vh; }
+    .tab-button:focus-visible,.hero-action:focus-visible,a:focus-visible { outline:3px solid #ff6976;outline-offset:3px; }
+    a,button { -webkit-tap-highlight-color:transparent; }
+    footer { background:rgba(0,0,0,.18);letter-spacing:.04em; }
+    @media (max-width:760px) {
+      .topbar { padding:13px 18px; }
+      .world-grid { grid-template-columns:1fr; }
+      .world-card { min-height:235px; }
+      .section { padding:58px 0; }
+    }
+    @media (max-width:560px) {
+      .topbar { gap:12px; }
+      .topbar nav { width:100%;flex-wrap:nowrap;overflow-x:auto;padding:2px 0 8px;scrollbar-width:thin;scrollbar-color:#76212b transparent; }
+      .topbar nav::-webkit-scrollbar { height:3px; }
+      .topbar nav::-webkit-scrollbar-thumb { background:#76212b;border-radius:8px; }
+      .tab-button { flex:0 0 auto;white-space:nowrap;padding:9px 12px;font-size:12px; }
+      .hero { min-height:490px;padding:92px 18px 72px; }
+      .hero-update { line-height:1.5; }
+      .section { width:min(100% - 34px,1120px);padding:48px 0; }
+      .news-grid,.community-grid,.roadmap-grid,.schedule-grid { grid-template-columns:1fr; }
+      .timezone-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .community-banner::after { font-size:120px;right:8px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *,*::before,*::after { scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important; }
+    }
+
   </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS7WJNEC0W"></script>
@@ -457,6 +595,10 @@
       <h1>RED<span>ARMY</span></h1>
       <p>Contenido, videojuegos y proyectos.</p>
       <div class="hero-mark"></div>
+      <div class="hero-actions">
+        <a class="hero-action primary" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">VER EN YOUTUBE ↗</a>
+        <a class="hero-action secondary" href="https://discord.gg/QducSKxag" target="_blank" rel="noopener noreferrer">UNIRME A DISCORD ↗</a>
+      </div>
       <div class="hero-update">ESTA WEB VA A ESTAR EN ACTUALIZACIONES CADA 2 DÍAS (APROXIMADAMENTE)</div>
     </section>
 
@@ -483,6 +625,17 @@
           <h3>Camino a los 5.000 subs</h3>
           <p>La meta especial de REDARMY: el Voice Reveal cuando lleguemos a 5 mil suscriptores.</p>
         </article>
+      </div>
+    </section>
+
+
+    <section class="section" aria-labelledby="voice-title">
+      <div class="community-banner voice-banner">
+        <span class="card-tag">OBJETIVO PRINCIPAL · YOUTUBE</span>
+        <h3 id="voice-title">VOICE REVEAL</h3>
+        <p>Una meta especial para celebrar con toda la comunidad. Cuando REDARMY llegue a los 5.000 suscriptores, llega el Voice Reveal.</p>
+        <div class="voice-target"><strong>5.000</strong><span>SUSCRIPTORES</span></div>
+        <a class="community-cta" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">Acompañar el camino ↗</a>
       </div>
     </section>
 
