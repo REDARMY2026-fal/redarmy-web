@@ -728,12 +728,13 @@
         <p class="section-intro">Todavía no hay transmisiones programadas. Cuando confirme una fecha, el anuncio aparecerá acá.</p>
       </div>
 
-      <div class="stream-card stream-empty">
-        <span class="stream-label">SIN FECHAS CONFIRMADAS</span>
-        <div class="stream-time">PRÓXIMAMENTE</div>
-        <h3>Estamos preparando los directos.</h3>
-        <p>Por ahora no hay días ni horarios anunciados. Seguime en YouTube para enterarte cuando se confirme el próximo directo.</p>
-        <a class="community-cta" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">Ir al canal de YouTube ↗</a>
+      <div class="stream-card stream-empty" id="stream-announcement" aria-live="polite">
+        <span class="stream-label" id="stream-status">SIN FECHAS CONFIRMADAS</span>
+        <div class="stream-time" id="stream-time">PRÓXIMAMENTE</div>
+        <h3 id="stream-title">Estamos preparando los directos.</h3>
+        <p id="stream-message">Por ahora no hay días ni horarios anunciados. Seguime en YouTube para enterarte cuando se confirme el próximo directo.</p>
+        <p id="stream-details" class="timezone-note" hidden></p>
+        <a class="community-cta" id="stream-link" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">Ir al canal de YouTube ↗</a>
       </div>
     </section>
 
@@ -829,6 +830,66 @@
       activateTab([...buttons].some(button => button.dataset.tab === initial) ? initial : 'inicio', false);
     })();
   </script>
+
+  <script>
+    // Los anuncios se administran editando directos.json desde GitHub.
+    (() => {
+      const defaults = {
+        status: 'none',
+        title: 'Estamos preparando los directos.',
+        game: '',
+        date: '',
+        time: '',
+        timezone: 'Argentina',
+        platform: 'YouTube',
+        message: 'Por ahora no hay días ni horarios anunciados. Seguime en YouTube para enterarte cuando se confirme el próximo directo.',
+        url: 'https://www.youtube.com/@REDARMYGAMER2027'
+      };
+      const byId = id => document.getElementById(id);
+      const safeUrl = value => {
+        try {
+          const parsed = new URL(value);
+          return parsed.protocol === 'https:' ? parsed.href : defaults.url;
+        } catch (_) { return defaults.url; }
+      };
+      fetch('./directos.json', { cache: 'no-store' })
+        .then(response => {
+          if (!response.ok) throw new Error('No se pudo cargar el anuncio');
+          return response.json();
+        })
+        .then(data => {
+          const item = { ...defaults, ...data };
+          const allowed = ['none', 'scheduled', 'cancelled', 'finished'];
+          if (!allowed.includes(item.status)) throw new Error('Estado de anuncio inválido');
+          const statusLabels = {
+            none: 'SIN FECHAS CONFIRMADAS',
+            scheduled: 'DIRECTO PROGRAMADO',
+            cancelled: 'DIRECTO CANCELADO',
+            finished: 'DIRECTO FINALIZADO'
+          };
+          byId('stream-status').textContent = statusLabels[item.status];
+          byId('stream-title').textContent = String(item.title || defaults.title);
+          byId('stream-message').textContent = String(item.message || '');
+          byId('stream-time').textContent = item.status === 'scheduled'
+            ? [item.date, item.time].filter(Boolean).join(' · ') || 'FECHA A CONFIRMAR'
+            : item.status === 'cancelled' ? 'ANUNCIO ACTUALIZADO' : item.status === 'finished' ? 'GRACIAS POR ACOMPAÑAR' : 'PRÓXIMAMENTE';
+          const details = [item.game, item.platform, item.timezone].filter(Boolean).join(' · ');
+          byId('stream-details').textContent = details;
+          byId('stream-details').hidden = !details || item.status === 'none';
+          const link = byId('stream-link');
+          link.href = safeUrl(item.url);
+          link.textContent = item.status === 'scheduled' ? 'Ver canal / directo ↗' : 'Ir al canal de YouTube ↗';
+          if (item.status === 'none') {
+            byId('stream-title').textContent = 'Estamos preparando los directos.';
+            byId('stream-message').textContent = item.message || defaults.message;
+          }
+        })
+        .catch(() => {
+          // Si el JSON no carga, queda visible el anuncio de respaldo del HTML.
+        });
+    })();
+  </script>
+
 
 </body>
 </html>
