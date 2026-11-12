@@ -1,3 +1,5 @@
-# redarmy-web
+# REDARMY
+
 Página oficial de REDARMY.
-el mejor de todos
+
+> **El mejor de todos.**
