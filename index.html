@@ -539,6 +539,10 @@
     .social-card span { font-size:13px; }
     .featured-video { box-shadow:var(--glow); }
     .stream-card { background:linear-gradient(145deg,#1a1b23,#101117); }
+    .stream-empty { max-width:720px; margin:0 auto; padding:32px; text-align:center; }
+    .stream-empty .stream-time { font-size:clamp(27px,5vw,42px); letter-spacing:1px; }
+    .stream-empty h3 { margin:8px 0; }
+    .stream-empty p { max-width:520px; margin:0 auto 12px; }
     .tab-panel { min-height:64vh; }
     .tab-button:focus-visible,.hero-action:focus-visible,a:focus-visible { outline:3px solid #ff6976;outline-offset:3px; }
     a,button { -webkit-tap-highlight-color:transparent; }
@@ -720,38 +724,16 @@
     <section class="section" id="directos">
       <div class="section-heading">
         <div class="eyebrow">EN VIVO · YOUTUBE</div>
-        <h2>Cronograma de directos</h2>
-        <p class="section-intro">Los horarios son tentativos. Cada directo durará aproximadamente una hora y estará dedicado principalmente a Brawl Stars.</p>
+        <h2>Próximos directos</h2>
+        <p class="section-intro">Todavía no hay transmisiones programadas. Cuando confirme una fecha, el anuncio aparecerá acá.</p>
       </div>
 
-      <div class="schedule-grid">
-        <article class="stream-card">
-          <span class="stream-label">POSIBLE · SUJETO A DISPONIBILIDAD</span>
-          <h3>Jueves</h3>
-          <div class="stream-time">21:00</div>
-          <p>Horario de Argentina · Duración aproximada: 1 hora</p>
-        </article>
-        <article class="stream-card">
-          <span class="stream-label">POSIBLE · SUJETO A DISPONIBILIDAD</span>
-          <h3>Sábados</h3>
-          <div class="stream-time">22:00</div>
-          <p>Horario de Argentina · Duración aproximada: 1 hora</p>
-        </article>
-      </div>
-
-      <div class="timezone-wrap">
-        <h3>Horarios en otros países</h3>
-        <div class="timezone-grid">
-          <div class="timezone-item"><strong>Uruguay</strong><span>Jue 21:00 · Sáb 22:00</span></div>
-          <div class="timezone-item"><strong>Chile (Santiago)</strong><span>Jue 21:00 · Sáb 22:00</span></div>
-          <div class="timezone-item"><strong>Brasil (Brasilia)</strong><span>Jue 21:00 · Sáb 22:00</span></div>
-          <div class="timezone-item"><strong>Paraguay</strong><span>Jue 21:00 · Sáb 22:00</span></div>
-          <div class="timezone-item"><strong>Colombia</strong><span>Jue 19:00 · Sáb 20:00</span></div>
-          <div class="timezone-item"><strong>Perú</strong><span>Jue 19:00 · Sáb 20:00</span></div>
-          <div class="timezone-item"><strong>México (CDMX)</strong><span>Jue 18:00 · Sáb 19:00</span></div>
-          <div class="timezone-item"><strong>España (Madrid)</strong><span>Vie 01:00 · Dom 02:00</span></div>
-        </div>
-        <p class="timezone-note">Los horarios internacionales son orientativos y pueden variar cuando algún país cambia al horario de verano o de invierno. Los directos se anunciarán por YouTube; Twitch todavía no forma parte del cronograma.</p>
+      <div class="stream-card stream-empty">
+        <span class="stream-label">SIN FECHAS CONFIRMADAS</span>
+        <div class="stream-time">PRÓXIMAMENTE</div>
+        <h3>Estamos preparando los directos.</h3>
+        <p>Por ahora no hay días ni horarios anunciados. Seguime en YouTube para enterarte cuando se confirme el próximo directo.</p>
+        <a class="community-cta" href="https://www.youtube.com/@REDARMYGAMER2027" target="_blank" rel="noopener noreferrer">Ir al canal de YouTube ↗</a>
       </div>
     </section>
 
