@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#191016"/><stop offset=".55" stop-color="#0d0e13"/><stop offset="1" stop-color="#07080b"/></linearGradient>
+ <radialGradient id="red"><stop stop-color="#e32636" stop-opacity=".42"/><stop offset="1" stop-color="#e32636" stop-opacity="0"/></radialGradient>
+ <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#fff" stroke-opacity=".045"/></pattern>
+ </defs>
+ <rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#grid)"/>
+ <ellipse cx="610" cy="270" rx="500" ry="330" fill="url(#red)"/>
+ <path d="M0 520L360 0M150 630L550 0M850 630L1200 170" stroke="#e32636" stroke-opacity=".13" stroke-width="2"/>
+ <rect x="64" y="62" width="1072" height="506" rx="24" fill="none" stroke="#fff" stroke-opacity=".13"/>
+ <rect x="64" y="62" width="9" height="506" rx="4" fill="#e32636"/>
+ <text x="112" y="190" fill="#ff5362" font-family="Arial,sans-serif" font-size="23" font-weight="700" letter-spacing="9">PÁGINA OFICIAL</text>
+ <text x="104" y="350" fill="#fff" font-family="Arial,sans-serif" font-size="116" font-weight="900" letter-spacing="2">RED<tspan fill="#e32636">ARMY</tspan></text>
+ <path d="M112 390H255" stroke="#e32636" stroke-width="6" stroke-linecap="round"/>
+ <text x="112" y="452" fill="#d6d6dc" font-family="Arial,sans-serif" font-size="30">VIDEOJUEGOS · CONTENIDO · COMUNIDAD</text>
+ <text x="112" y="512" fill="#ff7a85" font-family="Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="3">VOICE REVEAL · META 5.000 SUSCRIPTORES</text>
+ <text x="1080" y="525" fill="#fff" fill-opacity=".35" text-anchor="end" font-family="Arial,sans-serif" font-size="17" letter-spacing="3">REDARMY</text>
+</svg>
